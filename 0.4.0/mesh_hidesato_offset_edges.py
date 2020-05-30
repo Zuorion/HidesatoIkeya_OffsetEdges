@@ -935,7 +935,7 @@ class OffsetEdges(bpy.types.Operator, OffsetBase):
             return False
         self._exverts = \
             self.get_exverts(self._bm, self._offset_infos, self._edges_orig)
-
+        bmesh.update_edit_mesh(ob_edit.data)
         return True
 
     def modal_clean_bmeshes(self, context, ob_edit):
